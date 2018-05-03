@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">KNX</string>
+    <string name="RegistHint">Felhasználónév</string>
+    <string name="btn_Login">Bejelentkezés</string>
+    <string name="btn_About">Impresszum</string>
+    <string name="btn_Settings">Beállítások</string>
+    <string name="btn_Hotkeys">Gyorsgombok</string>
+    <string name="btn_Supervision">Lakásfelügyelet</string>
+    <string name="knx1">L1</string>
+    <string name="knx2">L2</string>
+    <string name="knx3">L3</string>
+    <string name="knx4">L4</string>
+    <string name="title_activity_about">Készítő</string>
+    <string name="txt_about">Juhász József\nNeptun-kód: IID6W9</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="btn_WidgetLightsOn">ON</string>
+    <string name="btn_WidgetLightsOff">OFF</string>
+    <string name="btn_LightsOn">ON</string>
+    <string name="btn_LightsOff">OFF</string>
+    <string name="tv_Lamps">Minden lámpa</string>
+    <string name="btn_BackHotkeys">Vissza</string>
+    <string name="btnNotifproba">notif</string>
+    <string name="username">Felhasználónév</string>
+    <string name="title_notifications">Alkalmazáson kívüli értesítések</string>
+    <string name="default_ip">192.168.0.10</string>
+    <string name="default_port">64217</string>
+    <string name="key_port">key_port</string>
+    <string name="key_ip">key_ip</string>
+    <string name="action_settings">Beállítások</string>
+    <string name="key_notifications">key_notifications</string>
+    <string name="title_activity_settings">Beállítások</string>
+    <string name="summary_port">Adja meg a KNX szerver portját (pl.:64217)</string>
+    <string name="title_port">Szerver Port</string>
+    <string name="title_ip">Szerver IP</string>
+    <string name="summary_ip">Adja meg a KNX szerver IP címét (pl.:192.168.2.10)</string>
+
+</resources>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.jj.knx.MenuActivity"
+    tools:showIn="@layout/activity_menu">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_marginTop="100dp">
+
+        <Button
+            android:id="@+id/btn_Supervision"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_Supervision" />
+
+        <Button
+            android:id="@+id/btn_Hotkeys"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_Hotkeys" />
+
+        <Button
+            android:id="@+id/btn_About"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_About" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:onClick="sendNotification"
+            android:text="@string/btnNotifproba" />
+
+    </LinearLayout>
+</RelativeLayout>

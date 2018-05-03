@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="Általános">
+
+        <EditTextPreference
+            android:defaultValue="@string/default_ip"
+            android:key="@string/key_ip"
+            android:summary="@string/summary_ip"
+            android:title="@string/title_ip" />
+
+        <EditTextPreference
+            android:defaultValue="@string/default_port"
+            android:key="@string/key_port"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:inputType="number"
+            android:summary="@string/summary_port"
+            android:title="@string/title_port" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Értesítések">
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="@string/key_notifications"
+            android:title="@string/title_notifications" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

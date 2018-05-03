@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- első csúszka -->
+
+    <TextView
+        android:id="@+id/TextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/SeekBar1"
+        android:layout_marginEnd="30dp"
+        android:layout_toStartOf="@+id/SeekBar1"
+        android:text="@string/knx1"
+        />
+
+    <SeekBar
+        android:id="@+id/SeekBar1"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:max="100"
+        />
+
+    <EditText
+        android:id="@+id/EditText1"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/SeekBar1"
+        android:layout_marginStart="30dp"
+        android:layout_toEndOf="@+id/SeekBar1"
+        android:inputType="number"
+        android:maxLength="3"
+        android:gravity="center"
+        />
+
+    <!-- második csúszka -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/SeekBar2"
+        android:layout_marginEnd="30dp"
+        android:layout_toStartOf="@+id/SeekBar2"
+        android:text="@string/knx2"
+        />
+
+    <SeekBar
+        android:id="@+id/SeekBar2"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SeekBar1"
+        android:layout_marginTop="30dp"
+        android:layout_centerInParent="true"
+        android:max="100"
+        />
+
+    <EditText
+        android:id="@+id/EditText2"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/SeekBar2"
+        android:layout_marginStart="30dp"
+        android:layout_toEndOf="@+id/SeekBar2"
+        android:inputType="number"
+        android:maxLength="3"
+        android:gravity="center"
+        />
+
+    <!--harmadik csúszka -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/SeekBar3"
+        android:layout_marginEnd="30dp"
+        android:layout_toStartOf="@+id/SeekBar3"
+        android:text="@string/knx3"
+        />
+
+    <SeekBar
+        android:id="@+id/SeekBar3"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SeekBar2"
+        android:layout_marginTop="30dp"
+        android:layout_centerInParent="true"
+        android:max="100"
+        />
+
+    <EditText
+        android:id="@+id/EditText3"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/SeekBar3"
+        android:layout_marginStart="30dp"
+        android:layout_toEndOf="@+id/SeekBar3"
+        android:inputType="number"
+        android:maxLength="3"
+        android:gravity="center"
+        />
+
+    <!--negyedik csúszka -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/SeekBar4"
+        android:layout_marginEnd="30dp"
+        android:layout_toStartOf="@+id/SeekBar4"
+        android:text="@string/knx4"
+        />
+
+    <SeekBar
+        android:id="@+id/SeekBar4"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SeekBar3"
+        android:layout_marginTop="30dp"
+        android:layout_centerInParent="true"
+        android:max="100"
+        />
+
+    <EditText
+        android:id="@+id/EditText4"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/SeekBar4"
+        android:layout_marginStart="30dp"
+        android:layout_toEndOf="@+id/SeekBar4"
+        android:inputType="number"
+        android:maxLength="3"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/TextView10"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="103dp"
+        android:layout_marginStart="76dp" />
+
+    <Button
+        android:id="@+id/btn_BackSupervision"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:background="@android:color/transparent"
+        android:drawableLeft="@drawable/icon_back" />
+
+    <TextView
+        android:id="@+id/TW1"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TW2"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/TW2"
+        android:layout_width="86dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/EditText4"
+        android:layout_centerHorizontal="true" />
+
+
+    <!--
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/EditText1"
+            android:layout_alignBottom="@+id/EditText1"
+            android:layout_marginEnd="31dp"
+            android:layout_toStartOf="@+id/SeekBar2"
+            android:text="L2" />
+
+        <SeekBar
+            android:id="@+id/SeekBar2"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/EditText2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="13dp" />
+
+        <EditText
+            android:id="@+id/EditText2"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="159dp"
+            android:layout_marginStart="36dp"
+            android:layout_toEndOf="@+id/SeekBar2"
+            android:inputType="number"
+            android:gravity="center"/>
+-->
+</RelativeLayout>
