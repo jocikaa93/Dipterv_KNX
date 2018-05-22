@@ -24,9 +24,13 @@ import java.net.Socket;
 
 public class Client {
 
+    private static Client client = new Client();
 
+    public static Client getInstance() {
+        return client;
+    }
 
-    public static void sendData(final Context context, String addr, String value) throws IOException {
+    public void sendData(final Context context, String addr, String value) throws IOException {
 
         Socket AndroidClient;
         InputStream is = null;

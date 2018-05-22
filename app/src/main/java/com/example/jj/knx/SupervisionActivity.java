@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.jj.knx.Communication.Client;
+import com.example.jj.knx.Communication.Server;
 import com.example.jj.knx.Data.AddressMapClass;
 
 import java.io.IOException;
@@ -24,6 +25,8 @@ import java.io.IOException;
 public class SupervisionActivity extends AppCompatActivity {
 
     Context context;
+    Client clientInstance = Client.getInstance();
+    private SeekBar sb1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +63,7 @@ public class SupervisionActivity extends AppCompatActivity {
 
         context = this;
 
-        SeekBar SB1 = findViewById(R.id.SeekBar1);
+        sb1 = findViewById(R.id.SeekBar1);
         SeekBar SB2 = findViewById(R.id.SeekBar2);
         SeekBar SB3 = findViewById(R.id.SeekBar3);
         SeekBar SB4 = findViewById(R.id.SeekBar4);
@@ -87,12 +90,12 @@ public class SupervisionActivity extends AppCompatActivity {
             }
         });
 */
-        ET1.addTextChangedListener(textWatcherSample(ET1, SB1));
+        ET1.addTextChangedListener(textWatcherSample(ET1, sb1));
         ET2.addTextChangedListener(textWatcherSample(ET2, SB2));
         ET3.addTextChangedListener(textWatcherSample(ET3, SB3));
         ET4.addTextChangedListener(textWatcherSample(ET4, SB4));
 
-        SB1.setOnSeekBarChangeListener(seekBarChangeListenerSample(ET1));
+        sb1.setOnSeekBarChangeListener(seekBarChangeListenerSample(ET1));
         SB2.setOnSeekBarChangeListener(seekBarChangeListenerSample(ET2));
         SB3.setOnSeekBarChangeListener(seekBarChangeListenerSample(ET3));
         SB4.setOnSeekBarChangeListener(seekBarChangeListenerSample(ET4));
@@ -120,6 +123,33 @@ public class SupervisionActivity extends AppCompatActivity {
         };
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Server server = Server.getInstance();
+                try {
+                    server.listen(9090, sb1);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+    }
+
+    @Override
+    protected void onPause() {
+        Server server = Server.getInstance();
+        try {
+            server.stopListening();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        super.onPause();
+    }
+
     private TextWatcher textWatcherSample(final EditText editText, final SeekBar seekBar) {
         return new TextWatcher() {
             @Override
@@ -145,7 +175,7 @@ public class SupervisionActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         try {
-                            Client.sendData(context, AddressMapClass.getAddress(editText.getId()), editText.getText().toString());
+                            clientInstance.sendData(context, AddressMapClass.getAddress(editText.getId()), editText.getText().toString());
                         } catch (IOException e) {
                             e.printStackTrace();
                             runOnUiThread(new Runnable() {

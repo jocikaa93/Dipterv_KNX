@@ -17,6 +17,7 @@ import java.util.Map;
 public class HotkeysActivity extends Activity {
 
     Context context;
+    Client clientInstance = Client.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +33,7 @@ public class HotkeysActivity extends Activity {
                     public void run() {
                         for(Map.Entry<Integer, String> a : AddressMapClass.getAddressMap().entrySet()) {
                             try {
-                                Client.sendData(context, a.getValue(),"0");
+                                clientInstance.sendData(context, a.getValue(),"0");
                             } catch (IOException e) {
                                 e.printStackTrace();
                                 //TODO majd Joci megcsinálja
@@ -61,7 +62,7 @@ public class HotkeysActivity extends Activity {
                     public void run() {
                         for(Map.Entry<Integer, String> a : AddressMapClass.getAddressMap().entrySet()) {
                             try {
-                                Client.sendData(context, a.getValue(),"0");
+                                clientInstance.sendData(context, a.getValue(),"0");
                             } catch (IOException e) {
                                 e.printStackTrace();
                                 //TODO majd Joci megcsinálja

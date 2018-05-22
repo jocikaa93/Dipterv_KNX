@@ -23,6 +23,7 @@ public class KnxWidget extends AppWidgetProvider {
 
     public static final String ACTION = "ON";
     public static final String ACTION2 = "OFF";
+    Client clientInstance = Client.getInstance();
 
     @Override
     public void onUpdate(final Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
@@ -56,7 +57,7 @@ public class KnxWidget extends AppWidgetProvider {
                 @Override
                 public void run() {
                     try {
-                        Client.sendData(context, "1/1/1", "85");
+                        clientInstance.sendData(context, "1/1/1", "85");
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -69,7 +70,7 @@ public class KnxWidget extends AppWidgetProvider {
                 @Override
                 public void run() {
                     try {
-                        Client.sendData(context, "1/1/1", "0");
+                        clientInstance.sendData(context, "1/1/1", "0");
                     } catch (IOException e) {
                         e.printStackTrace();
                         mHandler.post(new Runnable() {
