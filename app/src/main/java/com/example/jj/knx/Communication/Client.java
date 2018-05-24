@@ -9,7 +9,9 @@ import android.support.v7.preference.PreferenceManager;
 import android.widget.Toast;
 
 import com.example.jj.knx.MainActivity;
+import com.example.jj.knx.Model.TcpKnxData;
 import com.example.jj.knx.R;
+import com.google.gson.Gson;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -25,6 +27,7 @@ import java.net.Socket;
 public class Client {
 
     private static Client client = new Client();
+    Gson gson = new Gson();
 
     public static Client getInstance() {
         return client;
@@ -49,7 +52,9 @@ public class Client {
             //is = AndroidClient.getInputStream();
             os = AndroidClient.getOutputStream();
 
-            os.write((addr + ", " + value).getBytes());
+            String message = gson.toJson(new TcpKnxData("JociVagyok",addr,Integer.parseInt(value)));
+
+            os.write(message.getBytes());
             os.close();
 
 //            InputStreamReader isr = new InputStreamReader(is, "UTF-8");

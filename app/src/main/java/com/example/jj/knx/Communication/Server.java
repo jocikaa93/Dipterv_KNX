@@ -37,7 +37,7 @@ public class Server {
             TcpKnxData knxData = gson.fromJson(message, TcpKnxData.class);
 
             System.out.println(knxData.getValue() + " " + knxData.getDestinationAddress());
-            s1.setProgress(knxData.getValue());
+            //s1.setProgress(knxData.getValue());
             //TODO felület frissítése
         }
     }

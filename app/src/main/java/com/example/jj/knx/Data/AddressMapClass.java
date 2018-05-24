@@ -19,10 +19,10 @@ public class AddressMapClass {
     private static boolean firstRun = true;
     public static void initialize() {
         if(firstRun) {
-            addressMap.put(R.id.EditText1, "0/3/0");
-            addressMap.put(R.id.EditText2, "0/3/1");
-            addressMap.put(R.id.EditText3, "0/3/2");
-            addressMap.put(R.id.EditText4, "0/3/3");
+            addressMap.put(R.id.EditText1, "0/2/0");
+            addressMap.put(R.id.EditText2, "0/2/1");
+            addressMap.put(R.id.EditText3, "0/2/2");
+            addressMap.put(R.id.EditText4, "0/2/3");
             firstRun = false;
         }
     }
